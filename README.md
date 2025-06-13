@@ -115,6 +115,26 @@ python setup-credentials.py
 pip install -r requirements.txt
 ```
 
+## 📱 JupyterLab Git Extension
+
+The container includes the **@jupyterlab/git** extension with powerful Git integration:
+
+### **👁️ Visual Git Interface:**
+- **Git Tab**: Click the Git icon in JupyterLab's left sidebar
+- **Stage Changes**: Drag files to stage them for commit
+- **Visual Diffs**: See notebook changes highlighted
+- **Commit Interface**: Write commit messages in the GUI
+- **Push/Pull**: One-click sync with GitHub
+- **Branch Management**: Create, switch, and merge branches visually
+- **History Browser**: Browse commit history with diffs
+
+### **🚀 Benefits for ML Development:**
+- **Notebook-Aware**: Handles Jupyter notebook format properly
+- **Cell-Level Diffs**: See exactly which cells changed
+- **Output Cleaning**: Can clear outputs before commits
+- **Conflict Resolution**: Visual merge conflict resolution
+- **SSH Integration**: Works seamlessly with your SSH keys
+
 ## 💡 Usage Examples
 
 ### **Clone Private Repos (SSH)**
