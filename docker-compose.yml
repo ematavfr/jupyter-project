@@ -18,7 +18,7 @@ services:
     networks:
       - sites
     restart: unless-stopped
-    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' --NotebookApp.base_url='/jupyter' --NotebookApp.allow_root=True
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' --NotebookApp.base_url='/' --NotebookApp.allow_root=True
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.jupyter.rule=Host(`sites`) && PathPrefix(`/jupyter`)"
