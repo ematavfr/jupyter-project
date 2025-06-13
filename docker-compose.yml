@@ -1,0 +1,29 @@
+version: '3.8'
+
+networks:
+  sites:
+    external: true
+
+services:
+  # JupyterLab service
+  jupyterlab:
+    image: jupyter/datascience-notebook:latest
+    container_name: jupyterlab
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    networks:
+      - sites
+    restart: unless-stopped
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' --NotebookApp.base_url='/jupyter' --NotebookApp.allow_root=True
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.jupyter.rule=Host(`sites`) && PathPrefix(`/jupyter`)"
+      - "traefik.http.routers.jupyter.entrypoints=web"
+      - "traefik.http.services.jupyter.loadbalancer.server.port=8888"
+      - "traefik.http.middlewares.jupyter-stripprefix.stripprefix.prefixes=/jupyter"
+      - "traefik.http.routers.jupyter.middlewares=jupyter-stripprefix"
+
