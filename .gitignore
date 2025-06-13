@@ -1,0 +1,95 @@
+# Jupyter and Python
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment Variables (NEVER COMMIT THESE)
+.env
+.env.local
+.env.*.local
+
+# Credentials and Keys (NEVER COMMIT THESE)
+credentials/*.json
+credentials/*.key
+credentials/*.pem
+credentials/*.p12
+credentials/.env
+*.key
+*.pem
+*.p12
+
+# Data files (usually too large for git)
+data/*.csv
+data/*.parquet
+data/*.json
+data/*.h5
+data/*.hdf5
+data/*.pkl
+data/*.pickle
+data/raw/
+data/processed/
+data/models/
+
+# Model files (usually too large)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.model
+models/
+checkpoints/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Weights & Biases
+wandb/
+
+# TensorBoard logs
+logs/
+tensorboard/
+
+# Cache directories
+.cache/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Keep directory structure
+!data/.gitkeep
+!credentials/.gitkeep
+!models/.gitkeep
+

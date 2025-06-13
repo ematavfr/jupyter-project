@@ -1,0 +1,5 @@
+# Data directory
+# Store your datasets here
+# Large data files are automatically ignored by .gitignore
+# Consider using DVC (Data Version Control) for large datasets
+

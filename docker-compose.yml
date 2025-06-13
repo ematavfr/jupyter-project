@@ -9,12 +9,16 @@ services:
   jupyterlab:
     image: jupyter/datascience-notebook:latest
     container_name: jupyterlab
+    env_file:
+      - .env
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - JUPYTER_TOKEN=
     volumes:
       - ./notebooks:/home/jovyan/work
       - ./data:/home/jovyan/data
+      - ~/.ssh:/home/jovyan/.ssh:ro
+      - ~/.gitconfig:/home/jovyan/.gitconfig:ro
     networks:
       - sites
     restart: unless-stopped
